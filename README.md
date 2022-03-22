@@ -1,1 +1,1 @@
-"# Django Version of Web Agenda Project" 
+# Django Version of Web Agenda Project
