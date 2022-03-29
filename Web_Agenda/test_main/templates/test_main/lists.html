@@ -1,0 +1,35 @@
+{% extends "test_main/base.html" %}
+
+{% block title %} Your Lists {% endblock %}
+
+{% block content %}
+
+<h2> Your Lists: </h2>
+{% if lists %}
+<ul>
+    {% for list in lists %}
+    <h3> {{list.name}} </h3>
+    <form method="POST" action="#">
+        {% csrf_token %}
+        <ul>
+            <div class="form-group">
+                {% for item in list.item_set.all %}
+                {% if item.completed == True %}
+                <li> {{item.content}} <input type="checkbox" , value="clicked" , name="c{{item.id}}" checked> </li>
+                {% else %}
+                <li> {{item.content}} <input type="checkbox" , value="clicked" , name="c{{item.id}}"> </li>
+                {% endif %}
+                {% endfor %}
+            </div>
+        </ul>
+        <button type="submit" name="delete List" value="{{list.id}}">Delete List</button>
+        <button type="submit" name="Edit items" value="{{list.id}}">Edit List</button>
+    </form>
+    <br>
+    {% endfor %}
+</ul>
+{% else %}
+<p>You have no lists.</p>
+{% endif %}
+
+{% endblock %}

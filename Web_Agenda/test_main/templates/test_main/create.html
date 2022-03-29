@@ -1,0 +1,20 @@
+{% extends 'test_main/base.html' %}
+{% block title %} Create a new List {% endblock %}
+
+{% block content %}
+<h2> Create a new List </h2>
+
+<div class="container">
+    <form method="POST" action="/add_item">
+        {% csrf_token %}
+        {{form.as_p}}
+    </form>
+    <br>
+</div>
+
+
+{% if message %}
+<p> {{message}} </p>
+{% endif %}
+
+{% endblock %}
