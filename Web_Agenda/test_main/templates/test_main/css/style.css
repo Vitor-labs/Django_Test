@@ -4,27 +4,39 @@ body, html {
     background-color: lightblue;
 }
 
+.sidenav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
 .content {
     margin: 0 auto;
     width: 400px;
 }
 
-table, td, th {
-    border: 1px solid #aaa;
+.sidenav a {
+    padding:6px 8px 6px 16px;
+    text-decoration: none;
+    font-size:25px;
+    color: #818181;
+    display:block;
 }
 
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
+.sidenav a:hover{
+    color:#f1f1f1;
+}	
 
-th {
-    height: 30px;
-}
-
-td {
-    text-align: center;
-    padding: 5px;
+.main{
+    margin-left:160px;
+    padding: 0px 10px;
 }
 
 .form {
