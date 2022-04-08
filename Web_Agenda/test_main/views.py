@@ -6,16 +6,13 @@ from .models import ToDoList, Item
 
 # Create your views here.
 
-
-def index(request):
-    return HttpResponse(
-        "<h1> Hello, world. You're at the main index. </h1>" +
-        "<h2> This is a test project for learning more aboult Django. </h2>"
-    )
+MSG = """
+This is a test page for the Django framework.
+"""
 
 
 def home(request):
-    return render(request, 'test_main/home.html', {"message": "Hello, world!"})
+    return render(request, 'test_main/home.html', {"message": MSG})
 
 
 def view_itens(request):

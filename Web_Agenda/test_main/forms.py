@@ -26,7 +26,8 @@ class ItemForm(forms.Form):
 
     class Meta:
         model = Item
-        fields = ('item_text',)
+        fields = ('item_text',
+                  'check')
 
 
 class ToDoForm(forms.Form):

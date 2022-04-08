@@ -2,14 +2,28 @@
 
 {% block title %} Home page {% endblock %}
 
+{% block head %}
+<style></style>
+{% endblock %}
+
 {% block content %}
 
-<h2> HOME PAGE </h2>
-<div class="row">
-    <div class="col-md-12">
-        <h1>Web Agenda</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Welcome to the home page</h1>
+        </div>
+        <div>
+            <p> {{message}} </p>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Donec eget nunc vitae nunc tincidunt lobortis.
+                Nullam euismod, nisi vel consectetur ultrices,
+                nisl nunc consequat nunc, eget consectetur nisl
+                nunc eget nunc.
+            </p>
+        </div>
     </div>
 </div>
 
-<p> {{message}} </p>
 {% endblock %}
