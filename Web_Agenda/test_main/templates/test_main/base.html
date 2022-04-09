@@ -68,8 +68,12 @@
             <div class="col-8">
                 <h1 class="mt-2">To Do Manager</h1>
                 <hr class="mt-0 mb-4">
+                {% if user.is_authenticated%}
                 {% block content %}
                 {% endblock %}
+                {% else %}
+                <a href=/login>Login Here</a>
+                {% endif %}
             </div>
         </div>
     </div>

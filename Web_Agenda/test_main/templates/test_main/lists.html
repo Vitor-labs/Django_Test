@@ -9,7 +9,7 @@
 <ul>
     {% for list in lists %}
     <h3> {{list.name}} </h3>
-    <form method="POST" action="#">
+    <form method="POST">
         {% csrf_token %}
         <ul>
             <div class="form-group">
@@ -22,9 +22,8 @@
                 {% endfor %}
             </div>
         </ul>
-        <button type="submit" name="delete List" value="{{list.id}}" onclick="">Delete
-            List</button>
-        <button type="submit" name="Edit items" value="{{list.id}}">Edit List</button>
+        <button type="submit" id="delete" value="{{list.id}}">Delete List</button>
+        <button type="submit" id="edit" value="{{list.id}}">Edit List</button>
     </form>
     <br>
     {% endfor %}

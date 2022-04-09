@@ -36,3 +36,17 @@ def add_item(request):
     else:
         form = ToDoForm()
         return render(request, 'test_main/create.html', {"form": form})
+
+
+def edit_item(request):
+    if request.method == "POST":
+        form = ItemForm(request.POST)
+
+        if form.is_valid():
+            nm = form.cleaned_data["item_text"]
+            todo = Item(text=nm)
+            todo.save()
+            return redirect('/items')
+    else:
+        form = ItemForm()
+        return render(request, 'test_main/edit.html', {"form": form})
