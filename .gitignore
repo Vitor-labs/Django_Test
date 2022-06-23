@@ -2,6 +2,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+env/*
+
 # Django stuff:
 *.log
 local_settings.py
