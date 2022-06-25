@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css'
 import Header from './components/header'
@@ -11,8 +11,10 @@ function App() {
       <div className="container dark">
         <div className="App">
           <Header />
-          <Route path="/" element={<NotesListPage />} />
-          <Route path="/note/:id" element={<NotePage />} />
+          <Routes>
+            <Route path="/" element={<NotesListPage />} />
+            <Route path="/note/:id" element={<NotePage />} />
+          </Routes>
         </div>
       </div>
     </Router>

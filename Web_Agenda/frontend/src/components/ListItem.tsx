@@ -1,16 +1,13 @@
-import React from "react";
+import React from 'react'
+import { Link } from "react-router-dom";
 
-interface Note {
-    content: string;
-    created: Date;
-    updated: Date;
-}
-
-const ListItem = (note: Note) => {
+const ListItem = ({ note }: any) => {
     return (
-        <div>
-            <h1>{note.content}</h1>
-        </div>
+        <Link to={`note/${note.id}`}>
+            <div className="notes-list-item" >
+                <h3>{note.content}</h3>
+            </div>
+        </Link>
     )
 }
 

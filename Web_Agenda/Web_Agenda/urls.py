@@ -23,5 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name="index"),
     path('api/notes/', views.get_notes, name="notes"),
+    path('api/note/add/', views.create_note, name="create_note"),
     path('api/note/<int:pk>/', views.get_note, name="note"),
+    path('api/note/<int:pk>/update/', views.update_note, name="update_note"),
+    path('api/note/<int:pk>/delete/', views.delete_note, name="delete_note"),
 ]

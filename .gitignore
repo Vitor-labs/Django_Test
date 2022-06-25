@@ -19,8 +19,8 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-db.sqlite3
-db.sqlite3-journal
+*/db.sqlite3
+*/db.sqlite3-journal
 
 **/node_modules
 dist
