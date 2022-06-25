@@ -8,11 +8,6 @@ from .serializers import NoteSerializer
 
 # Create your views here.
 @api_view(['GET'])
-def index(request):
-    return Response('Hello there')
-
-
-@api_view(['GET'])
 def get_notes(request):
     notes = Note.objects.all().order_by('-updated')
     serializer = NoteSerializer(notes, many=True)

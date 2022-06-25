@@ -15,16 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 from api import views
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name="index"),
     path('api/notes/', views.get_notes, name="notes"),
     path('api/note/add/', views.create_note, name="create_note"),
     path('api/note/<int:pk>/', views.get_note, name="note"),
     path('api/note/<int:pk>/update/', views.update_note, name="update_note"),
     path('api/note/<int:pk>/delete/', views.delete_note, name="delete_note"),
+    path('', TemplateView.as_view(template_name="index.html")),
 ]

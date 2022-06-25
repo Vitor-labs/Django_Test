@@ -79,7 +79,7 @@ const NotePage = (_id: any) => {
     let handleChange = (element: React.ChangeEvent<HTMLTextAreaElement>) => {
         setNote({
             ...note,
-            content: element.target.value
+            'content': element.target.value
         })
     }
 
@@ -106,7 +106,7 @@ const NotePage = (_id: any) => {
                 )}
 
             </div>
-            <textarea onChange={handleChange} defaultValue={note?.content}></textarea>
+            <textarea onChange={handleChange} value={note?.content}></textarea>
         </div >
     )
 }
