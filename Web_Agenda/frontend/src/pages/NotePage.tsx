@@ -63,7 +63,7 @@ const NotePage = (_id: any) => {
     }
     // =====================================================================
 
-    let handleChangeOnNote = () => {
+    let handleAction = () => {
         console.log('NOTE:', note)
         if (note_id !== 'add' && note.content == '') {
             deleteNote()
@@ -76,11 +76,18 @@ const NotePage = (_id: any) => {
         navigate("http://localhost:3000/")
     }
 
+    let handleChange = (element: React.ChangeEvent<HTMLTextAreaElement>) => {
+        setNote({
+            ...note,
+            content: element.target.value
+        })
+    }
+
     return (
         <div className="note">
             <div className="note-header">
                 <h3>
-                    <Link to={"/"} onClick={handleChangeOnNote}>
+                    <Link to={"/"} onClick={handleAction}>
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                             <title>chevron-left-circle</title>
                             <path d="M16 32c-8.822 0-16-7.178-16-16s7.178-16 16-16c8.822 0 16 7.178 16 16s-7.178 16-16 16zM16 2c-7.72 0-14 6.28-14 14s6.28 14 14 14c7.72 0 14-6.28 14-14s-6.28-14-14-14z"></path>
@@ -93,13 +100,13 @@ const NotePage = (_id: any) => {
                         <RemoveButton />
                     </Link>
                 ) : (
-                    <Link to="/" className="floating-button" onClick={createNote}>
+                    <Link to="/" className="floating-button" onClick={handleAction}>
                         <CheckButton />
                     </Link>
                 )}
 
             </div>
-            <textarea onChange={(e) => { setNote({ ...note, 'content': e.target.value }); console.log(e) }} defaultValue={note?.content}></textarea>
+            <textarea onChange={handleChange} defaultValue={note?.content}></textarea>
         </div >
     )
 }
