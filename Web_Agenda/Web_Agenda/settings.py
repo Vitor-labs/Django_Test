@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -57,11 +58,12 @@ CORS_ALLOW_ALL_ORIGINS = True  # Allow all origins. Change later
 
 ROOT_URLCONF = 'Web_Agenda.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / './frontend/dist',
+            BASE_DIR / 'frontend/dist',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
